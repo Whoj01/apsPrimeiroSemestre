@@ -41,6 +41,19 @@ html{
   --body-font: 'DM Sans', sans-serif;
 }
 
+.text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+.title {
+  font: 700 var(--title-font-size) var(--title-font);
+  color: var(--darker);
+  margin-bottom: 1rem;
+  
+}
+
 .container{
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -213,6 +226,7 @@ nav .menu ul {
 
 nav .icon-menu {
   opacity: 1;
+  
 }
 
 nav .icon-close {
@@ -222,7 +236,9 @@ nav .icon-close {
   filter: invert(70%) sepia(17%) saturate(984%) hue-rotate(81deg) brightness(95%) contrast(87%);
 }
 
-nav ul {
+nav.show ul {
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
   align-items: center;
   transition: .2s;
@@ -230,7 +246,6 @@ nav ul {
 
 nav ul li a{
   font: 700  var(--title-font-size) var(--title-font);
-  color: var(--darker);
   text-align: center;
   color: var(--green);
 }
@@ -239,6 +254,7 @@ nav ul li a{
 
 nav.show .icon-menu {
   opacity: 0;
+  
 }
 
 nav.show .icon-close {
@@ -285,19 +301,6 @@ nav.show .menu {
   border-radius: 6px;
 }
 
-.text {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-  text-align: center;
-}
-
-.title {
-  font: 700 var(--title-font-size) var(--title-font);
-  color: var(--darker);
-  margin-bottom: 1rem;
-  
-}
-
 #desenvolvimento div p {
   font: 400 var(--subtitle-font-size) var(--body-font);
   color: #767676;
@@ -327,4 +330,49 @@ nav.show .menu {
 #reciclagem .image img {
   z-index: 1;
   position: relative;
+}
+
+/*================================= Projetos ======================*/
+
+#projetos .title {
+  margin-bottom: 2rem;
+}
+
+#projetos .carrousel {
+  width: 75%;
+  height: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+#projetos .carrouselImage {
+  border-radius: 6px;
+  height: 100%;
+  width: 100%;
+}
+
+#projetos .icon-previous{
+  position: absolute;
+  width: 2rem;
+  top: 50%;
+  transform: rotatey(180deg);
+  left: 0.625rem;
+  cursor: pointer;
+}
+
+#projetos .icon-next{
+ position: absolute;
+ width: 2rem;
+ top: 50%;
+ right: 0.625rem;
+ color: red;
+ cursor: pointer;
+}
+
+#projetos .carrousel-item{
+  display: none;
+}
+
+#projetos .visible {
+  display: block;
 }
