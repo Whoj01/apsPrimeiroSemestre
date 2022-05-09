@@ -111,7 +111,8 @@ nav.show .menu {
   opacity: 1;
   visibility: visible;
 
-  background: #00856F;
+  background: #00856FDF;
+  backdrop-filter: blur(10px);
 
   height: 100vh;
   width: 100vw;
