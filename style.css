@@ -22,6 +22,7 @@ html{
   scroll-behavior: smooth;
 }
 
+
 /*VARIABLES*/
 
 :root {
@@ -46,7 +47,7 @@ html{
 }
 
 .section {
-  padding: calc(10rem + var(--header-heigth)) 0;
+  padding: calc(5rem + var(--header-heigth)) 0;
 }
 
 .divider-1 {
@@ -55,17 +56,23 @@ html{
   height: 1px;
 }
 
+.divider-2 {
+  background: linear-gradient(270deg, #0BFC06 0%, rgba(255, 255, 255, 0.34) 100%);
+  width: 100%;
+  height: 1px;
+}
+
 /*HEADER*/
 
 #header {
-  position: fixed;
+  position: sticky;
   width: 100%;
   z-index: 100;
   display: flex;
 
   top: 0;
   left: 0;
-  margin-bottom: 2rem;
+  
   border-bottom: 1px solid var(--green);
   transition: .4s;
 }
@@ -107,11 +114,16 @@ nav ul{
 
 /*mostrar menu*/
 
+nav.show {
+  overflow-y: hidden;
+}
+
 nav.show .menu {
   opacity: 1;
   visibility: visible;
 
-  background: #00856F;
+  background: #00856FDF;
+  backdrop-filter: blur(10px);
 
   height: 100vh;
   width: 100vw;
@@ -119,17 +131,25 @@ nav.show .menu {
   position: fixed;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow-y: hidden;
+ 
 
   display: grid;
   place-content: center;
 }
 
 nav.show .menu ul {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   
 }
 
+nav.show .menu ul li a {
+  color: var(--green);
+  
+}
 .icon-menu {
   width: 1.5rem;
   color: var(--green);
@@ -172,6 +192,7 @@ nav.show ul li a{
 
 #desenvolvimento {
   overflow: hidden;
+  background: #F9F9F9;
 }
 
 #desenvolvimento.container{
@@ -195,13 +216,12 @@ nav.show ul li a{
   position: relative;
   margin-bottom: 2rem;
   left: -24px;
-  border-radius: 6px;
-  
 }
 
 #desenvolvimento .image img{
   position: relative;
   z-index: 1;
+  border-radius: 6px;
 }
 
 .text {
@@ -221,5 +241,29 @@ nav.show ul li a{
   font: 400 var(--subtitle-font-size) var(--body-font);
   color: #767676;
   margin-bottom: 2rem;
+}
+
+/* ========================RECICLAGEM=======================*/
+
+#reciclagem .image {
+  position: relative;
+  z-index: 1;
+}
+
+#reciclagem .image::after {
+  display: block;
+  content: "";
+  width: 75%;
+  background: var(--darker);
+  z-index: 0;
+  position: absolute;
+  height: 100%;
+  top: -10%;
+  left: 0;
   
+}
+
+#reciclagem .image img {
+  z-index: 1;
+  position: relative;
 }

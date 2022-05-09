@@ -5,18 +5,20 @@ const nav = document.querySelector('nav')
 const menuItens = document.querySelectorAll('nav ul li')
 const header = document.querySelector('#header')
 
-function handleMenu() {
-  nav.classList.toggle('show')
-}
-
+/*Calbacks*/
 function boxShadow() {
-  if (window.scrollY > 117) {
+  if (window.scrollY > 130) {
     header.classList.add('scroll')
   } else {
     header.classList.remove('scroll')
   }
 }
 
+function handleMenu() {
+  nav.classList.toggle('show')
+}
+
+/*adicionando eventos*/
 window.addEventListener('scroll', boxShadow)
 
 menuItens.forEach(e => {
