@@ -139,6 +139,15 @@ function handleCarrouselImagePrevious() {
   informationItem[id].classList.add('show')
 }
 
+function backToTopButton() {
+  const backToTop = document.querySelector('.back-to-top')
+  if (window.scrollY > 700) {
+    backToTop.classList.add('onScreen')
+  } else {
+    backToTop.classList.remove('onScreen')
+  }
+}
+
 function boxShadow() {
   if (window.scrollY > 130) {
     header.classList.add('scroll')
@@ -152,6 +161,8 @@ function handleMenu() {
 }
 
 /*adicionando eventos*/
+window.addEventListener('scroll', backToTopButton)
+
 window.addEventListener('scroll', boxShadow)
 
 menuItens.forEach(e => {
