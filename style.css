@@ -18,10 +18,9 @@ img {
   height: auto;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
-
 
 /*VARIABLES*/
 
@@ -30,15 +29,15 @@ html{
   /*COLORS*/
 
   --green: #6ac17d;
-  --sky-blue: #30E3CA;
-  --blue: #11999E;
-  --darker: #40514E;
+  --sky-blue: #30e3ca;
+  --blue: #11999e;
+  --darker: #40514e;
 
   /*Title*/
   --title-font-size: 1.875rem;
   --subtitle-font-size: 1rem;
-  --title-font: 'Poppins', sans-serif;
-  --body-font: 'DM Sans', sans-serif;
+  --title-font: "Poppins", sans-serif;
+  --body-font: "DM Sans", sans-serif;
 }
 
 .text {
@@ -51,10 +50,9 @@ html{
   font: 700 var(--title-font-size) var(--title-font);
   color: var(--darker);
   margin-bottom: 1rem;
-  
 }
 
-.container{
+.container {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
@@ -64,13 +62,21 @@ html{
 }
 
 .divider-1 {
-  background: linear-gradient(270deg, #F6F7F5 0%, rgba(18, 238, 15, 0.541) 100%);
+  background: linear-gradient(
+    270deg,
+    #f6f7f5 0%,
+    rgba(18, 238, 15, 0.541) 100%
+  );
   width: 100%;
   height: 1px;
 }
 
 .divider-2 {
-  background: linear-gradient(270deg, #0BFC06 0%, rgba(255, 255, 255, 0.34) 100%);
+  background: linear-gradient(
+    270deg,
+    #0bfc06 0%,
+    rgba(255, 255, 255, 0.34) 100%
+  );
   width: 100%;
   height: 1px;
 }
@@ -85,13 +91,14 @@ html{
 
   top: 0;
   left: 0;
-  
+
   border-bottom: 1px solid var(--green);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 #header.scroll {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 nav {
@@ -99,10 +106,9 @@ nav {
   align-items: center;
   justify-content: space-between;
   height: var(--header-heigth);
-  background: #F9F9F9;
+  background: #f9f9f9;
   width: 100%;
   padding: 0 1.5rem;
-
 }
 
 #header nav a.logo {
@@ -192,7 +198,8 @@ nav.show ul li a{
 .icon-menu {
   width: 1.5rem;
   color: var(--green);
-  filter: invert(70%) sepia(17%) saturate(984%) hue-rotate(81deg) brightness(95%) contrast(87%);
+  filter: invert(70%) sepia(17%) saturate(984%) hue-rotate(81deg)
+    brightness(95%) contrast(87%);
 }
 
 .icon-close {
@@ -205,10 +212,10 @@ nav.show ul li a{
 }
 
 nav .menu {
-  transition: .4s;
+  transition: 0.4s;
   opacity: 0;
   visibility: visible;
-  background: linear-gradient(180deg, #00856FEF, #00856F90);
+  background: linear-gradient(180deg, #00856fef, #00856f90);
   backdrop-filter: blur(10px);
   height: 100vh;
   width: 100vw;
@@ -221,19 +228,18 @@ nav .menu {
 }
 nav .menu ul {
   display: grid;
-  
 }
 
 nav .icon-menu {
   opacity: 1;
-  
 }
 
 nav .icon-close {
   visibility: visible;
   opacity: 0;
   top: 1.5rem;
-  filter: invert(70%) sepia(17%) saturate(984%) hue-rotate(81deg) brightness(95%) contrast(87%);
+  filter: invert(70%) sepia(17%) saturate(984%) hue-rotate(81deg)
+    brightness(95%) contrast(87%);
 }
 
 nav.show ul {
@@ -241,22 +247,22 @@ nav.show ul {
   flex-direction: column;
   gap: 4rem;
   align-items: center;
-  transition: .2s;
+  transition: 0.2s;
 }
 
-nav ul li a{
-  font: 700  var(--title-font-size) var(--title-font);
+nav ul li a {
+  font: 700 var(--title-font-size) var(--title-font);
   text-align: center;
   /*color: var(--green);*/
   color: #f0f0f0;
-  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.12)) drop-shadow(0 1px 2px rgba(0,0,0,0.24)); /* <-- só pra destacar um pouco o as opções do menu */
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12))
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.24)); /* <-- só pra destacar um pouco o as opções do menu */
 }
 
 /* mostrar menu */
 
 nav.show .icon-menu {
   opacity: 0;
-  
 }
 
 nav.show .icon-close {
@@ -272,10 +278,10 @@ nav.show .menu {
 
 #desenvolvimento {
   overflow: hidden;
-  background: #F9F9F9;
+  background: #f9f9f9;
 }
 
-#desenvolvimento.container{
+#desenvolvimento.container {
   margin: 0;
 }
 
@@ -292,13 +298,13 @@ nav.show .menu {
   border-radius: 6px;
 }
 
-#desenvolvimento .image  {
+#desenvolvimento .image {
   position: relative;
   margin-bottom: 2rem;
   left: -24px;
 }
 
-#desenvolvimento .image img{
+#desenvolvimento .image img {
   position: relative;
   z-index: 1;
   border-radius: 6px;
@@ -327,7 +333,6 @@ nav.show .menu {
   height: 100%;
   top: -10%;
   left: 0;
-  
 }
 
 #reciclagem .image img {
@@ -354,28 +359,67 @@ nav.show .menu {
   width: 100%;
 }
 
-#projetos .icon-previous{
+#projetos .icon-previous {
   position: absolute;
   width: 2rem;
   top: 50%;
   transform: rotatey(180deg);
   left: 0.625rem;
   cursor: pointer;
+  z-index: 999;
 }
 
-#projetos .icon-next{
- position: absolute;
- width: 2rem;
- top: 50%;
- right: 0.625rem;
- color: red;
- cursor: pointer;
+#projetos .icon-next {
+  position: absolute;
+  width: 2rem;
+  top: 50%;
+  right: 0.625rem;
+  color: red;
+  cursor: pointer;
+  z-index: 999;
 }
 
-#projetos .carrousel-item{
+#projetos .carrousel-item {
+  width: 100%;
+  height: 250px;
   display: none;
+
+  position: relative;
+}
+
+#projetos .carrousel-item h1 {
+  position: absolute;
+  color: red;
+}
+
+#projetos .carrousel-item img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+#projetos .carrousel #counter {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translate(-50%);
+
+  display: flex;
+  gap: 5px;
+}
+
+#projetos .carrousel #counter .counter {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: gray;
+}
+
+#projetos .carrousel #counter .active {
+  background: blue;
 }
 
 #projetos .visible {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
