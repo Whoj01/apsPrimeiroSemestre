@@ -90,10 +90,11 @@ carrouselImages.forEach((project, i) => {
 
 /* contador do carrousel */
 
-let id = 1
+let id = 0
 
 /*Calbacks*/
 function handleCarrouselImageNext() {
+  id++
   const carrouselItem = document.querySelectorAll('.carrousel-item')
   const counterItem = document.querySelectorAll('.counter')
   const informationItem = document.querySelectorAll('.projectInformation')
@@ -113,27 +114,30 @@ function handleCarrouselImageNext() {
   carrouselItem[id].classList.add('visible')
   counterItem[id].classList.add('active')
   informationItem[id].classList.add('show')
-  id++
 }
-/* --------------------------------------------------------------------NAO FUNCIONA :D
+
 function handleCarrouselImagePrevious() {
-  const carrouselItem = document.querySelectorAll(".carrousel-item");
-  const counterItem = document.querySelectorAll(".counter");
+  id--
+  const carrouselItem = document.querySelectorAll('.carrousel-item')
+  const counterItem = document.querySelectorAll('.counter')
+  const informationItem = document.querySelectorAll('.projectInformation')
 
-  carrouselItem.forEach((e) => {
-    e.classList.remove("visible");
-  });
-  counterItem.forEach((e) => {
-    e.classList.remove("active");
-  });
+  informationItem.forEach(e => {
+    e.classList.remove('show')
+  })
 
-  if (id < 0) id = carrouselItem.length - 1;
-  carrouselItem[id].classList.add("visible");
-  counterItem[id].classList.add("active");
-  id--;
-  console.log(id);
+  carrouselItem.forEach(e => {
+    e.classList.remove('visible')
+  })
+  counterItem.forEach(e => {
+    e.classList.remove('active')
+  })
+
+  if (id <= -1) id = 4
+  carrouselItem[id].classList.add('visible')
+  counterItem[id].classList.add('active')
+  informationItem[id].classList.add('show')
 }
-*/
 
 function boxShadow() {
   if (window.scrollY > 130) {
