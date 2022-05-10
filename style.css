@@ -387,9 +387,10 @@ nav.show .menu {
   position: relative;
 }
 
-#projetos .carrousel-item h1 {
+#projetos .carrousel-item p {
   position: absolute;
-  color: red;
+  font: 400 var(--subtitle-font-size) var(--body-font);
+  top: -20px;
 }
 
 #projetos .carrousel-item img {
@@ -407,6 +408,8 @@ nav.show .menu {
   gap: 5px;
 }
 
+
+
 #projetos .carrousel #counter .counter {
   width: 10px;
   height: 10px;
@@ -422,4 +425,17 @@ nav.show .menu {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#projetos #carrouselText .projectInformation {
+  display: none;
+}
+
+#projetos #carrouselText .show {
+  display: flex;
+  align-items: center;
+  margin-top: 3.5rem;
+  font: 400 var(--subtitle-font-size) var(--body-font);
+  color: var(--darker)
+
 }
