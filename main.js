@@ -115,6 +115,25 @@ function handleCarrouselImageNext() {
   informationItem[id].classList.add('show')
   id++
 }
+/* --------------------------------------------------------------------NAO FUNCIONA :D
+function handleCarrouselImagePrevious() {
+  const carrouselItem = document.querySelectorAll(".carrousel-item");
+  const counterItem = document.querySelectorAll(".counter");
+
+  carrouselItem.forEach((e) => {
+    e.classList.remove("visible");
+  });
+  counterItem.forEach((e) => {
+    e.classList.remove("active");
+  });
+
+  if (id < 0) id = carrouselItem.length - 1;
+  carrouselItem[id].classList.add("visible");
+  counterItem[id].classList.add("active");
+  id--;
+  console.log(id);
+}
+*/
 
 function boxShadow() {
   if (window.scrollY > 130) {

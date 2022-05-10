@@ -321,18 +321,20 @@ nav.show .menu {
 #reciclagem .image {
   position: relative;
   z-index: 1;
+  border-radius: 6px;
 }
 
 #reciclagem .image::after {
   display: block;
   content: "";
-  width: 75%;
-  background: var(--darker);
+  width: 100%;
+  background: linear-gradient(315deg, var(--darker), #a8afae);
   z-index: 0;
   position: absolute;
   height: 100%;
   top: -10%;
-  left: 0;
+  left: -25%;
+  border-radius: 6px;
 }
 
 #reciclagem .image img {
@@ -366,7 +368,8 @@ nav.show .menu {
   transform: rotatey(180deg);
   left: 0.625rem;
   cursor: pointer;
-  z-index: 999;
+  z-index: 10;
+  filter: invert(1) drop-shadow(0px 0px 2px #00000080);
 }
 
 #projetos .icon-next {
@@ -376,7 +379,8 @@ nav.show .menu {
   right: 0.625rem;
   color: red;
   cursor: pointer;
-  z-index: 999;
+  z-index: 10;
+  filter: invert(1) drop-shadow(0px 0px 2px #00000080);
 }
 
 #projetos .carrousel-item {
@@ -414,11 +418,12 @@ nav.show .menu {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  background: gray;
+  background: var(--darker);
+  transition: 0.4s;
 }
 
 #projetos .carrousel #counter .active {
-  background: blue;
+  background: var(--green);
 }
 
 #projetos .visible {
