@@ -25,7 +25,7 @@ const carrouselImages = [
     title: 'Tampets',
     thumb: 'images/projeto-tampets.jpg',
     information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?',
+      'O projeto TamPets tem como objetivo coletar tampinhas e vendê-las a fim de arrecadar fundo monetário para auxiliar abrigos, protetores independentes e tutores em condições financeiras limitadas.',
     link: 'https://www.projetotampetsorocaba.com/'
   },
   {
@@ -181,6 +181,7 @@ function handleMenu() {
 window.addEventListener('scroll', () => {
   backToTopButton()
   boxShadow()
+  changeBackToTopFooter()
 })
 
 menuItens.forEach(e => {
@@ -190,3 +191,13 @@ menuItens.forEach(e => {
 menuButtons.forEach(e => {
   e.addEventListener('click', handleMenu)
 })
+
+/*mudar a cor do backToTop quando ele entrar no footer*/
+
+function changeBackToTopFooter() {
+  const backToTop = document.querySelector('.back-to-top')
+  const footer = document.querySelector('footer')
+  if (window.screenY >= 1945) {
+    backToTop.style.backgroundColor = 'black'
+  }
+}

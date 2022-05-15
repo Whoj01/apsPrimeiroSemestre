@@ -22,6 +22,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 /*VARIABLES*/
 
 :root {
@@ -484,17 +485,10 @@ nav.show .menu {
   
 }
 
-/*FOOOTERR*/
-footer {
-  width: 100vw;
-  height: 45vh;
-  background: var(--green);
-} 
-
 /*================================= back to top button  ======================*/
 
 .back-to-top {
-  background: var(--green);
+  background-color: var(--green);
   position: fixed;
   right: 1rem;
   bottom: 1rem;
@@ -516,9 +510,44 @@ footer {
 }
   
 
-
+/*FOOOTER*/
 footer {
   width: 100vw;
   height: 45vh;
   background: var(--green);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 1.5rem;
+  
+}
+
+
+footer .logo {
+  font: 700 var(--subtitle-font-size) var(--title-font);
+  color: var(--darker);
+  
+}
+
+footer .logo a{
+  width: 100%;
+  
+
+}
+footer .logo span {
+  color: #f9f9f9;
+  
+}
+
+footer .madeBy ul li {
+  color: #f9f9f9;
+  padding-left: 10px;
+  margin: 0.25rem 0;
+  
+}
+
+footer .madeBy ul {
+  font: 400 var(--subtitle-font-size) var(--body-font);
+  
 }
