@@ -9,77 +9,87 @@ const carrousel = document.getElementById('carrousel')
 const counter = document.getElementById('counter')
 const arrowPrevious = document.querySelectorAll('.icon-previous')
 const carrouselInformation = document.getElementById('carrouselText')
+const divButton = document.querySelector('#button')
 
 /* Elementos do carrousel*/
 
 const carrouselImages = [
   {
-    title: 'Projeto A',
-    thumb:
-      'https://media.gettyimages.com/photos/esports-team-competing-in-an-esports-tournament-picture-id1385174832?s=2048x2048',
+    title: 'GreenEletron',
+    thumb: 'images/GreenLixo.jpg',
     information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?'
+      'GreenEletron é uma empresa sem fins lucrativos que disponibiliza Pontos de Entrega Voluntárias(PEV) em Sorocaba, localizados principalmente em centros de compras e varejos. Através dos PEVs, a GreenEletron faz a coleta e logística da devolução dos equipamentos eletrônicos aos seus fabricantes para reutilização da matéria-prima.',
+    link: 'https://greeneletron.org.br/blog/mora-em-sorocaba-saiba-onde-descartar-seus-eletroeletronicos-sem-uso/'
   },
   {
-    title: 'Projeto B',
-    thumb:
-      'https://media.gettyimages.com/photos/rooster-gallus-domesticus-picture-id1387222695?s=2048x2048',
+    title: 'Tampets',
+    thumb: 'images/projeto-tampets.jpg',
     information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?'
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?',
+    link: 'https://www.projetotampetsorocaba.com/'
   },
   {
-    title: 'Projeto C',
-    thumb:
-      'https://static1.patasdacasa.com.br/articles/8/10/38/@/4864-o-cachorro-inteligente-mostra-essa-carac-articles_media_mobile-1.jpg',
+    title: 'MetaReciclagem',
+    thumb: 'images/meteReciclagem.jpg',
     information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?'
+      'Este projeto é destinado a direcionar o reciclamento do lixo eletrônico e o repasse para ele ser utilizado novamente por escolas, possuem um blog aonde informa todas as suas ações. ',
+    link: 'http://metareciclagemdesorocaba.blogspot.com/?m=1'
   },
   {
-    title: 'Projeto D',
-    thumb:
-      'https://www.petz.com.br/blog/wp-content/uploads/2021/12/porque-cachorro-lambe-tudo-2-1280x720.jpg',
+    title: 'ESAMC',
+    thumb: 'images/esamac.png',
     information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?'
-  },
-  {
-    title: 'Projeto E',
-    thumb:
-      'https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/03/visa%CC%83o-do-cachorro-2.jpeg?resize=626%2C626&ssl=1',
-    information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci dolorib'
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?',
+    link: 'https://parquetecsorocaba.com.br/'
   }
 ]
 
 /*CRIANDO O CARROUSEL*/
 
 carrouselImages.forEach((project, i) => {
+  /*criando os elementos da imagem, o contador e a descrição do projeto*/
   const divImage = document.createElement('div')
   const divCounter = document.createElement('div')
   const projectInformation = document.createElement('p')
+  const button = document.createElement('button')
+  const linkButton = document.createElement('a')
+
+  button.classList.add('button')
+
+  linkButton.setAttribute('target', '_onblank')
 
   divImage.classList.add('carrousel-item')
   divCounter.classList.add('counter')
+  /*se o indice for 0 o primerio item ja começa visivel*/
   if (i === 0) {
     divImage.classList.add('visible')
     divCounter.classList.add('active')
     projectInformation.classList.add('show')
+    button.classList.add(`linked`)
   }
-
+  /*adicionando e criando a img do carrousel*/
   const img = document.createElement('img')
   img.classList.add('carrouselImage')
   img.src = project.thumb
-
+  /*adicionando e criando o titulo do projeto do carrousel*/
   const projectName = document.createElement('p')
   projectName.classList.add('project')
   projectName.innerHTML = project.title
 
+  /*adicionando e criando a descrição da descrição do projeto do carrousel*/
   projectInformation.classList.add('projectInformation')
   projectInformation.classList.add('text')
-
   projectInformation.innerHTML = project.information
+
+  /*adicionando o button com o link para o projeto*/
+  linkButton.innerHTML = 'Saiba mais'
+  linkButton.href = project.link
 
   divImage.appendChild(projectName)
   divImage.appendChild(img)
+
+  divButton.appendChild(button)
+  button.appendChild(linkButton)
 
   carrousel.appendChild(divImage)
 
@@ -98,6 +108,11 @@ function handleCarrouselImageNext() {
   const carrouselItem = document.querySelectorAll('.carrousel-item')
   const counterItem = document.querySelectorAll('.counter')
   const informationItem = document.querySelectorAll('.projectInformation')
+  const buttonLink = document.querySelectorAll('.button')
+
+  buttonLink.forEach(e => {
+    e.classList.remove('linked')
+  })
 
   informationItem.forEach(e => {
     e.classList.remove('show')
@@ -111,9 +126,11 @@ function handleCarrouselImageNext() {
   })
 
   if (id > carrouselItem.length - 1) id = 0
+  /*Mostrando os itens */
   carrouselItem[id].classList.add('visible')
   counterItem[id].classList.add('active')
   informationItem[id].classList.add('show')
+  buttonLink[id].classList.add('linked')
 }
 
 function handleCarrouselImagePrevious() {
@@ -133,7 +150,7 @@ function handleCarrouselImagePrevious() {
     e.classList.remove('active')
   })
 
-  if (id <= -1) id = 4
+  if (id <= -1) id = carrouselItem.length - 1
   carrouselItem[id].classList.add('visible')
   counterItem[id].classList.add('active')
   informationItem[id].classList.add('show')
@@ -161,9 +178,10 @@ function handleMenu() {
 }
 
 /*adicionando eventos*/
-window.addEventListener('scroll', backToTopButton)
-
-window.addEventListener('scroll', boxShadow)
+window.addEventListener('scroll', () => {
+  backToTopButton()
+  boxShadow()
+})
 
 menuItens.forEach(e => {
   e.addEventListener('click', handleMenu)

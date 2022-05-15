@@ -395,8 +395,9 @@ nav.show .menu {
 
 #projetos .carrousel-item {
   width: 100%;
-  height: 250px;
+  height: 200px;
   display: none;
+  
 
   position: relative;
 }
@@ -416,7 +417,7 @@ nav.show .menu {
   position: absolute;
   bottom: -15px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translateX(-50%);
 
   display: flex;
   gap: 5px;
@@ -429,6 +430,7 @@ nav.show .menu {
   height: 10px;
   border-radius: 5px;
   background: var(--darker);
+  
 }
 
 #projetos .carrousel #counter .active {
@@ -452,6 +454,42 @@ nav.show .menu {
   font: 400 var(--subtitle-font-size) var(--body-font);
   color: var(--darker)
 }
+
+#projetos #button .button  {
+
+  display: none;
+}
+
+#projetos #button .button.linked  {
+  display: flex;
+  background: var(--green);
+  border: none;
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 2rem;
+  transition: 0.2s;
+  cursor: pointer;
+  
+}
+
+#projetos #button .button.linked:hover{
+  background: hsl(133, 60%, 59%);
+}
+
+#projetos #button .button a {
+  color: #F9F9F9;
+  font: 700 var(--subtitle-font-size) var(--body-font);
+  padding: 20px 15px;
+  
+  
+}
+
+/*FOOOTERR*/
+footer {
+  width: 100vw;
+  height: 45vh;
+  background: var(--green);
+} 
 
 /*================================= back to top button  ======================*/
 
