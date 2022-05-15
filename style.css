@@ -517,3 +517,8 @@ footer {
   
 
 
+footer {
+  width: 100vw;
+  height: 45vh;
+  background: var(--green);
+}
