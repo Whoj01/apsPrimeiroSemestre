@@ -227,6 +227,7 @@ nav .menu {
   display: grid;
   place-content: center;
 }
+
 nav .menu ul {
   display: grid;
 }
@@ -549,5 +550,87 @@ footer .madeBy ul li {
 
 footer .madeBy ul {
   font: 400 var(--subtitle-font-size) var(--body-font);
+  
+}
+
+/*responsividade*/
+
+@media (min-width: 1024px) {
+  .section{
+    padding: 10rem;
+    margin: 0 auto;
+  }
+
+  .icon-menu,
+  .icon-close {
+    display: none;
+  }
+
+  nav{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 7.68rem;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    width: 80%;
+    height: 5rem;
+    background: #f9f9f9;
+    position: static; 
+    justify-content: center;
+  }
+
+  nav .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  nav.show .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  
+
+  nav .menu ul li a{
+    font: 700 var(--subtitle-font-size) var(--title-font);
+    color: var(--darker);
+    
+    transition: all ease 0.3s;
+  }
+
+
+
+  
+
+  nav .menu ul li a:hover {
+    transform: scale(1.1)
+  }
+
+  #desenvolvimento {
+    display: flex;
+    
+  }
+
+  #desenvolvimento .image  {
+    order: 1;
+    margin-left: 7.3rem;
+    
+  }
+
+  #desenvolvimento .image img {
+    width: 35rem;
+  }
+
+  
+
   
 }

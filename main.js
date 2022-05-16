@@ -56,7 +56,7 @@ carrouselImages.forEach((project, i) => {
 
   button.classList.add('button')
 
-  linkButton.setAttribute('target', '_onblank')
+  linkButton.setAttribute('target', '_blank')
 
   divImage.classList.add('carrousel-item')
   divCounter.classList.add('counter')
