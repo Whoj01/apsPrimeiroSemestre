@@ -47,7 +47,7 @@ const carrouselImages = [
 /*CRIANDO O CARROUSEL*/
 
 carrouselImages.forEach((project, i) => {
-  /*criando os elementos da imagem, o contador e a descrição do projeto*/
+  /*criando os elementos da imagem, o contador, a descrição do projeto e o botao para o site do projeto*/
   const divImage = document.createElement('div')
   const divCounter = document.createElement('div')
   const projectInformation = document.createElement('p')
@@ -196,8 +196,12 @@ menuButtons.forEach(e => {
 
 function changeBackToTopFooter() {
   const backToTop = document.querySelector('.back-to-top')
-  const footer = document.querySelector('footer')
-  if (window.screenY >= 1945) {
-    backToTop.style.backgroundColor = 'black'
+
+  const windowWidth = window.matchMedia('(max-width: 700px)').matches
+
+  if (windowWidth === true && window.scrollY >= 1945) {
+    backToTop.style.backgroundColor = '#f9f9f9'
+  } else {
+    backToTop.style.backgroundColor = '#6ac17d'
   }
 }
