@@ -39,7 +39,7 @@ const carrouselImages = [
     title: 'ESAMC',
     thumb: 'images/esamac.png',
     information:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum incidunt rem atque optio nisi fugiat, quaerat voluptatum ab porro obcaecati sed adipisci doloribus?',
+      'O Parque Tecnológico de Sorocaba em conjunto com a ESAMC buscam promover o desenvolvimento sustentável em empresas através do projeto Cidade Sustentável.',
     link: 'https://parquetecsorocaba.com.br/'
   }
 ]
@@ -73,7 +73,9 @@ carrouselImages.forEach((project, i) => {
   img.src = project.thumb
   /*adicionando e criando o titulo do projeto do carrousel*/
   const projectName = document.createElement('p')
+
   projectName.classList.add('project')
+
   projectName.innerHTML = project.title
 
   /*adicionando e criando a descrição da descrição do projeto do carrousel*/
@@ -173,6 +175,12 @@ function boxShadow() {
   }
 }
 
+function handleMenuLinks() {
+  if (nav.classList.contains('show')) {
+    nav.classList.remove('show')
+  }
+}
+
 function handleMenu() {
   nav.classList.toggle('show')
 }
@@ -185,7 +193,7 @@ window.addEventListener('scroll', () => {
 })
 
 menuItens.forEach(e => {
-  e.addEventListener('click', handleMenu)
+  e.addEventListener('click', handleMenuLinks)
 })
 
 menuButtons.forEach(e => {

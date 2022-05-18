@@ -93,7 +93,7 @@ html {
   top: 0;
   left: 0;
 
-  border-bottom: 1px solid var(--green);
+  /*border-bottom: 1px solid var(--green);*/
   transition: 0.4s;
 }
 
@@ -229,6 +229,10 @@ nav .menu {
 }
 
 nav .menu ul {
+  display: none;
+}
+
+nav.show ul {
   display: grid;
 }
 
@@ -244,12 +248,12 @@ nav .icon-close {
     brightness(95%) contrast(87%);
 }
 /*RESOLVENDO BUG DO MENU SUBINDO GRUDADO*/
-nav ul a {
+/*nav ul li {
   display: flex;
   flex-direction: column;
   gap: 4rem;
   align-items: center;
-}
+}*/
 
 nav ul {
   display: flex;
@@ -257,7 +261,7 @@ nav ul {
 }
 
 
-nav.show ul {
+nav.show ul li{
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -270,7 +274,7 @@ nav ul li a {
   text-align: center;
   /*color: var(--green);*/
   color: #f0f0f0;
-  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12))
+  /*filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.12))
     drop-shadow(0 1px 2px rgba(0, 0, 0, 0.24)); /* <-- só pra destacar um pouco o as opções do menu */
 }
 
@@ -457,6 +461,11 @@ nav.show .menu {
   color: var(--darker)
 }
 
+#projetos .carrousel-item .project {
+  font: 700 var(--subtitle-font-size) var(--body-font);
+}
+
+
 #projetos #button .button  {
 
   display: none;
@@ -557,7 +566,7 @@ footer .madeBy ul {
 
 @media (min-width: 1024px) {
   .section{
-    padding: 10rem;
+    padding: 10rem 0;
     margin: 0 auto;
   }
 
@@ -600,24 +609,25 @@ footer .madeBy ul {
 
   
 
-  nav .menu ul li a{
+  nav .menu ul li a {
     font: 700 var(--subtitle-font-size) var(--title-font);
     color: var(--darker);
     
+    
+  }
+
+  nav .menu ul li {
     transition: all ease 0.3s;
   }
 
-
-
-  
-
-  nav .menu ul li a:hover {
+  nav .menu ul li:hover {
     transform: scale(1.1)
   }
 
   #desenvolvimento {
-    display: flex;
-    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
   }
 
   #desenvolvimento .image  {
@@ -627,10 +637,29 @@ footer .madeBy ul {
   }
 
   #desenvolvimento .image img {
-    width: 35rem;
+    width: 35rem; 
   }
+  
+
+  /**/
+
+ 
 
   
 
   
+
+  
+
+ 
+  
+
+ 
+  #projetos .carrousel-item img{
+    width: 100%;
+    height: 100%;
+  }
+  
+
+
 }
