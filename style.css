@@ -346,17 +346,20 @@ nav.show .menu {
   display: block;
   content: "";
   width: 75%;
-  background: var(--darker);
+  background: linear-gradient(-45deg, var(--darker), gray);
   z-index: 0;
   position: absolute;
   height: 100%;
   top: -10%;
   left: 0;
+  border-radius: 6px;
 }
 
 #reciclagem .image img {
   z-index: 1;
   position: relative;
+  
+  border-radius: 6px;
 }
 
 /*================================= Projetos ======================*/
@@ -607,13 +610,9 @@ footer .madeBy ul {
     flex-direction: row;
   }
 
-  
-
   nav .menu ul li a {
     font: 700 var(--subtitle-font-size) var(--title-font);
     color: var(--darker);
-    
-    
   }
 
   nav .menu ul li {
@@ -633,33 +632,63 @@ footer .madeBy ul {
   #desenvolvimento .image  {
     order: 1;
     margin-left: 7.3rem;
-    
+
   }
 
   #desenvolvimento .image img {
-    width: 35rem; 
+    width: 35rem;
   }
-  
+
+  #reciclagem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  #reciclagem .text
+
+  #reciclagem .image  {
+    margin-left: 7.3rem;
+  }
+
+  #reciclagem .image::after {
+    left: -60px;
+  }
+
+  #reciclagem .image img {
+    width: 35rem;
+  }
+
+  #reciclagem p {
+    font: 400 var(--subtitle-font-size) var(--body-font);
+    color: #767676;
+  }
 
   /**/
 
- 
-
-  
-
-  
-
-  
-
- 
-  
-
- 
   #projetos .carrousel-item img{
     width: 100%;
     height: 100%;
   }
-  
 
+  /*FOOTER :D*/
+
+  footer {
+    padding-left: 16%;
+  }
+
+  footer .logo {
+    font: 700 calc(var(--subtitle-font-size) * 2) var(--title-font); 
+  }
+
+  footer .madeBy ul li {
+    color: #f9f9f9;
+    padding-left: 0;
+    margin: 0.25rem 0;
+  }
+
+  footer .madeBy ul {
+    font: 400 calc(var(--subtitle-font-size) * 1.16) var(--body-font);
+  }
 
 }
