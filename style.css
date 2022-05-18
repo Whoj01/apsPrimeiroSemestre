@@ -686,6 +686,14 @@ footer .madeBy ul {
   }
 
   /*Projetos*/
+
+  
+
+  #projetos .carrousel-item {
+    height: 300px;
+  }
+
+
   
   #projetos #carrouselText .show {
     
