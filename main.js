@@ -32,7 +32,7 @@ const carrouselImages = [
     title: 'MetaReciclagem',
     thumb: 'images/meteReciclagem.jpg',
     information:
-      'Este projeto é destinado a direcionar o reciclamento do lixo eletrônico e o repasse para ele ser utilizado novamente por escolas, possuem um blog aonde informa todas as suas ações. ',
+      'MetaReciclagem é um projeto de sorocaba aonde o objetivo é reaproveitar o máximo de componentes eletrônicos de um computador para montar uma nova máquina, depois essas máquinas são distruibuidas em entidades assistenciais cadastradas no Fundo Social de Solidariedade em ações sociais. ',
     link: 'http://metareciclagemdesorocaba.blogspot.com/?m=1'
   },
   {
