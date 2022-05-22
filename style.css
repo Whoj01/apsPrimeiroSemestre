@@ -49,7 +49,7 @@ html {
 
 .title {
   font: 700 var(--title-font-size) var(--title-font);
-  color: var(--darker);
+  color: var(--green);
   margin-bottom: 1rem;
 }
 
@@ -329,6 +329,8 @@ nav.show .menu {
   border-radius: 6px;
 }
 
+
+
 #desenvolvimento div p {
   font: 400 var(--subtitle-font-size) var(--body-font);
   color: #767676;
@@ -341,13 +343,14 @@ nav.show .menu {
 #reciclagem .image {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 #reciclagem .image::after {
   display: block;
   content: "";
   width: 75%;
-  background: linear-gradient(-45deg, var(--darker), gray);
+  background: var(--green);
   z-index: 0;
   position: absolute;
   height: 100%;
@@ -361,6 +364,89 @@ nav.show .menu {
   position: relative;
   
   border-radius: 6px;
+}
+
+#reciclagem .text {
+  margin-top: 2rem;
+}
+
+#reciclagem .text p {
+  font: 400 var(--subtitle-font-size) var(--title-font) ;
+  color: var(--darker);
+}
+
+#reciclagem .text h2 {
+  color: #446A46;
+}
+
+#reciclagem .cards {
+
+  display: grid;
+  margin-top: 4rem;
+  margin-left:  1.5rem;
+  margin-right: 1.5rem;
+  gap: 1.5rem;
+}
+
+#reciclagem .card {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #FCFFE7;
+  border-bottom: 4px solid var(--blue);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+  border-radius: 4px;
+  
+}
+
+
+
+#reciclagem .card img {
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 3.625rem;
+  
+}
+
+#reciclagem .card h1 {
+  margin-bottom: .75rem;
+  color: var(--blue); 
+  font: 700 var(--title-font-size) var(--title-font);
+}
+
+#reciclagem .card p {
+  text-align: justify;
+  font: 400 var(--subtitle-font-size) var(--body-font);
+  margin-bottom: 3.625rem;
+
+}
+
+#reciclagem .cards .metais {
+  border-bottom: 4px solid #F7D716;
+}
+
+#reciclagem .card .metal {
+  color: #F7D716;
+}
+
+#reciclagem .cards .vidros {
+  border-bottom: 4px solid #36AE7C;
+}
+
+#reciclagem .card .vidro {
+  color: #36AE7C;
+}
+
+#reciclagem .cards .plasticos {
+  border-bottom: 4px solid #FF5D5D;
+}
+
+#reciclagem .card .plastico {
+  color: #FF5D5D;
 }
 
 /*================================= Projetos ======================*/
@@ -574,9 +660,9 @@ footer .madeBy ul {
     margin: 0 auto;
   }
 
-  .container {
+  /*.container {
     padding: 10rem 7.68rem;
-  }
+  }*/
 
   .icon-menu,
   .icon-close {
@@ -633,6 +719,8 @@ footer .madeBy ul {
     color: var(--green);
   }
 
+  /*Desenvolvimento*/
+
   #desenvolvimento {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -642,31 +730,32 @@ footer .madeBy ul {
   #desenvolvimento .image  {
     order: 1;
     margin-left: 7.3rem;
-
   }
 
   #desenvolvimento .image img {
     width: 35rem;
   }
 
-  #desenvolvimento .text,#desenvolvimento .text p {
+  #desenvolvimento .text h1
+   {
+    text-align: center;
+    color: var(--green);
+  }
+
+  #desenvolvimento .text p {
     text-align: left;
   }
 
-   
+  /*========================reciclagem=============================*/
 
-  
   #reciclagem {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
   }
 
-  
-  
-
   #reciclagem .image  {
-    margin-left: 7.3rem;
+    margin-right: 7.3rem;
   }
 
   #reciclagem .image::after {
@@ -677,26 +766,19 @@ footer .madeBy ul {
     width: 35rem;
   }
 
-
-
-  #reciclagem p {
-    font: 400 var(--subtitle-font-size) var(--body-font);
+  #reciclagem .text p {
+    
     color: #767676;
-    text-align: center;
+    text-align: justify;
   }
 
   /*Projetos*/
-
-  
 
   #projetos .carrousel-item {
     height: 400px;
   }
 
-
-  
   #projetos #carrouselText .show {
-    
     text-align: left;
   }
   
@@ -705,9 +787,6 @@ footer .madeBy ul {
     width: 100%;
     height: 100%;
   }
-  
-
-  
 
   /*FOOTER :D*/
 
