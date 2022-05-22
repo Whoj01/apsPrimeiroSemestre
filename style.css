@@ -340,10 +340,16 @@ nav.show .menu {
 
 /* ========================RECICLAGEM=======================*/
 
+
+
 #reciclagem .image {
   position: relative;
   z-index: 1;
   width: 100%;
+}
+
+#reciclagem .image img {
+  width: 80%;
 }
 
 #reciclagem .image::after {
@@ -353,7 +359,7 @@ nav.show .menu {
   background: var(--green);
   z-index: 0;
   position: absolute;
-  height: 100%;
+  height: 70%;
   top: -10%;
   left: 0;
   border-radius: 6px;
@@ -748,11 +754,18 @@ footer .madeBy ul {
 
   /*========================reciclagem=============================*/
 
-  #reciclagem {
+  #reciclagem .containerGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
   }
+
+  #reciclagem .text h2 {
+    margin-top: 5rem;
+  }
+
+  /*#reciclagem .image {
+    width: 350px;
+  }*/
 
   #reciclagem .image  {
     margin-right: 7.3rem;
@@ -762,14 +775,18 @@ footer .madeBy ul {
     left: -60px;
   }
 
-  #reciclagem .image img {
-    width: 35rem;
-  }
+  
 
   #reciclagem .text p {
     
     color: #767676;
     text-align: justify;
+  }
+
+  #reciclagem .cards {
+    
+    grid-template-columns: 1fr 1fr;
+    
   }
 
   /*Projetos*/
