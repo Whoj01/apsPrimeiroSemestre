@@ -349,17 +349,17 @@ nav.show .menu {
 }
 
 #reciclagem .image img {
-  width: 80%;
+  width: 100%;
 }
 
 #reciclagem .image::after {
   display: block;
   content: "";
-  width: 75%;
+  width: 80%;
   background: var(--green);
   z-index: 0;
   position: absolute;
-  height: 70%;
+  height: 100%;
   top: -10%;
   left: 0;
   border-radius: 6px;
@@ -454,6 +454,57 @@ nav.show .menu {
 #reciclagem .card .plastico {
   color: #FF5D5D;
 }
+/*===========================LIXOELETRONICO=============================*/
+#lixoEletronico {
+  background: #F0F9FF;
+}
+
+#lixoEletronico .image {
+  width: 100%;
+  position: relative;
+}
+
+#lixoEletronico .image::after {
+  display: block;
+  content: "";
+  width: 80%;
+  background: var(--green);
+  z-index: 0;
+  position: absolute;
+  height: 100%;
+  top: -10%;
+  right: 0;
+  border-radius: 6px;
+}
+
+#lixoEletronico .image img {
+  position: relative;
+  z-index: 1;
+}
+
+#lixoEletronico .text {
+  margin-top: 2rem;
+}
+
+#lixoEletronico .text p {
+  font: 400 var(--subtitle-font-size) var(--body-font);
+  margin-bottom: 2rem;
+}
+
+#lixoEletronico .text img {
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+
+#lixoEletronico .text h2 {
+  font: 700 var(--title-font-size) var(--title-font);
+  color: #446A46;
+  margin-bottom: 2rem;
+}
+
+
+
+
 
 /*================================= Projetos ======================*/
 
@@ -753,6 +804,15 @@ footer .madeBy ul {
   }
 
   /*========================reciclagem=============================*/
+  #reciclagem .image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  #reciclagem .image img {
+    width: 80%;
+  }
 
   #reciclagem .containerGrid {
     display: grid;
@@ -786,8 +846,55 @@ footer .madeBy ul {
   #reciclagem .cards {
     
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 400px;
     
   }
+
+  /*============================E-WASTE===============*/
+
+  
+
+  #lixoEletronico .image {
+    order: 0;
+    
+  }
+  
+  #lixoEletronico .image img{
+    width: 100%;
+    border-radius: 6px;
+   
+  }
+
+  #lixoEletronico .image::after {
+    left: -50px;
+  }
+  
+  #lixoEletronico .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 4rem;
+    
+  }
+
+  #lixoEletronico .gridContainer .text p {
+    text-align: left;
+  }
+
+  #lixoEletronico .gridContainer .text .subtitle {
+    margin-left: 2rem;
+  }
+
+  #lixoEletronico .gridContainer .text .order {
+    padding-top: 5rem;
+  }
+
+  #lixoEletronico .gridContainer .trash img {
+    width: 95%;
+    border-radius: 6px;
+    margin-top: 5rem;
+    margin-left: 2rem;
+  }
+
 
   /*Projetos*/
 
@@ -836,5 +943,9 @@ footer .madeBy ul {
   footer .madeBy ul {
     font: 400 calc(var(--subtitle-font-size) * 1.16) var(--body-font);
   }
+
+  /*TENTAR COLOCAR COM NTH CHILD OS CARDS*/
+
+  /*ESTILIZAR OQ PUDER*/
 
 }
