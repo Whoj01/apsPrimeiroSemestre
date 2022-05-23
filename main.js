@@ -201,15 +201,3 @@ menuButtons.forEach(e => {
 })
 
 /*mudar a cor do backToTop quando ele entrar no footer*/
-
-function changeBackToTopFooter() {
-  const backToTop = document.querySelector('.back-to-top')
-
-  const windowWidth = window.matchMedia('(max-width: 700px)').matches
-
-  if (windowWidth === true && window.scrollY >= 1945) {
-    backToTop.style.backgroundColor = '#f9f9f9'
-  } else {
-    backToTop.style.backgroundColor = '#6ac17d'
-  }
-}
