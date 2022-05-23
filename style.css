@@ -488,6 +488,7 @@ nav.show .menu {
 
 #lixoEletronico .text p {
   font: 400 var(--subtitle-font-size) var(--body-font);
+  color: var(--darker);
   margin-bottom: 2rem;
 }
 

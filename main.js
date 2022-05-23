@@ -189,7 +189,6 @@ function handleMenu() {
 window.addEventListener('scroll', () => {
   backToTopButton()
   boxShadow()
-  changeBackToTopFooter()
 })
 
 menuItens.forEach(e => {
@@ -199,5 +198,3 @@ menuItens.forEach(e => {
 menuButtons.forEach(e => {
   e.addEventListener('click', handleMenu)
 })
-
-/*mudar a cor do backToTop quando ele entrar no footer*/
