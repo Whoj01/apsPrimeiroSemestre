@@ -5,11 +5,13 @@ const nav = document.querySelector('nav')
 const menuItens = document.querySelectorAll('nav ul li')
 const header = document.querySelector('#header')
 const arrowNext = document.querySelectorAll('.icon-next')
-const carrousel = document.getElementById('carrousel')
-const counter = document.getElementById('counter')
+
 const arrowPrevious = document.querySelectorAll('.icon-previous')
 const carrouselInformation = document.getElementById('carrouselText')
 const divButton = document.querySelector('#button')
+
+const projectLink = document.querySelector('.button a')
+const projectInformation = document.querySelector('.projectInformation')
 
 /* Elementos do carrousel*/
 
@@ -45,18 +47,12 @@ const carrouselImages = [
 ]
 
 /*CRIANDO O CARROUSEL*/
+let id = 0
 
 carrouselImages.forEach((project, i) => {
   /*criando os elementos da imagem, o contador, a descrição do projeto e o botao para o site do projeto*/
   const divImage = document.createElement('div')
   const divCounter = document.createElement('div')
-  const projectInformation = document.createElement('p')
-  const button = document.createElement('button')
-  const linkButton = document.createElement('a')
-
-  button.classList.add('button')
-
-  linkButton.setAttribute('target', '_blank')
 
   divImage.classList.add('carrousel-item')
   divCounter.classList.add('counter')
@@ -64,8 +60,9 @@ carrouselImages.forEach((project, i) => {
   if (i === 0) {
     divImage.classList.add('visible')
     divCounter.classList.add('active')
-    projectInformation.classList.add('show')
-    button.classList.add(`linked`)
+
+    projectLink.href = carrouselImages[id].link
+    projectInformation.innerHTML = carrouselImages[id].information
   }
   /*adicionando e criando a img do carrousel*/
   const img = document.createElement('img')
@@ -79,30 +76,16 @@ carrouselImages.forEach((project, i) => {
   projectName.innerHTML = project.title
 
   /*adicionando e criando a descrição da descrição do projeto do carrousel*/
-  projectInformation.classList.add('projectInformation')
-  projectInformation.classList.add('text')
-  projectInformation.innerHTML = project.information
-
-  /*adicionando o button com o link para o projeto*/
-  linkButton.innerHTML = 'Saiba mais'
-  linkButton.href = project.link
 
   divImage.appendChild(projectName)
   divImage.appendChild(img)
 
-  divButton.appendChild(button)
-  button.appendChild(linkButton)
-
   carrousel.appendChild(divImage)
-
-  carrouselInformation.appendChild(projectInformation)
 
   counter.appendChild(divCounter)
 })
 
 /* contador do carrousel */
-
-let id = 0
 
 /*Calbacks*/
 function handleCarrouselImageNext() {
@@ -110,15 +93,6 @@ function handleCarrouselImageNext() {
   const carrouselItem = document.querySelectorAll('.carrousel-item')
   const counterItem = document.querySelectorAll('.counter')
   const informationItem = document.querySelectorAll('.projectInformation')
-  const buttonLink = document.querySelectorAll('.button')
-
-  buttonLink.forEach(e => {
-    e.classList.remove('linked')
-  })
-
-  informationItem.forEach(e => {
-    e.classList.remove('show')
-  })
 
   carrouselItem.forEach(e => {
     e.classList.remove('visible')
@@ -131,19 +105,18 @@ function handleCarrouselImageNext() {
   /*Mostrando os itens */
   carrouselItem[id].classList.add('visible')
   counterItem[id].classList.add('active')
-  informationItem[id].classList.add('show')
-  buttonLink[id].classList.add('linked')
+  projectLink.href = carrouselImages[id].link
+  projectInformation.innerHTML = carrouselImages[id].information
 }
 
 function handleCarrouselImagePrevious() {
   id--
+
   const carrouselItem = document.querySelectorAll('.carrousel-item')
   const counterItem = document.querySelectorAll('.counter')
   const informationItem = document.querySelectorAll('.projectInformation')
-
-  informationItem.forEach(e => {
-    e.classList.remove('show')
-  })
+  const projectLink = document.querySelector('.button a')
+  const projectInformation = document.querySelector('.projectInformation')
 
   carrouselItem.forEach(e => {
     e.classList.remove('visible')
@@ -155,7 +128,9 @@ function handleCarrouselImagePrevious() {
   if (id <= -1) id = carrouselItem.length - 1
   carrouselItem[id].classList.add('visible')
   counterItem[id].classList.add('active')
-  informationItem[id].classList.add('show')
+
+  projectLink.href = carrouselImages[id].link
+  projectInformation.innerHTML = carrouselImages[id].information
 }
 
 function backToTopButton() {

@@ -431,27 +431,27 @@ nav.show .menu {
 
 }
 
-#reciclagem .cards .metais {
+#reciclagem .cards .card:nth-child(2) {
   border-bottom: 4px solid #F7D716;
 }
 
-#reciclagem .card .metal {
+#reciclagem .cards .card:nth-child(2) .text h1 {
   color: #F7D716;
 }
 
-#reciclagem .cards .vidros {
+#reciclagem .cards .card:nth-child(3) {
   border-bottom: 4px solid #36AE7C;
 }
 
-#reciclagem .card .vidro {
+#reciclagem .cards .card:nth-child(3) .text h1 {
   color: #36AE7C;
 }
 
-#reciclagem .cards .plasticos {
+#reciclagem .cards .card:nth-child(4) {
   border-bottom: 4px solid #FF5D5D;
 }
 
-#reciclagem .card .plastico {
+#reciclagem .cards .card:nth-child(4) .text h1 {
   color: #FF5D5D;
 }
 /*===========================LIXOELETRONICO=============================*/
@@ -598,10 +598,6 @@ nav.show .menu {
 }
 
 #projetos #carrouselText .projectInformation {
-  display: none;
-}
-
-#projetos #carrouselText .show {
   display: flex;
   align-items: center;
   margin-top: 3.5rem;
@@ -616,10 +612,6 @@ nav.show .menu {
 
 #projetos #button .button  {
 
-  display: none;
-}
-
-#projetos #button .button.linked  {
   display: flex;
   background: var(--green);
   border: none;
@@ -628,10 +620,11 @@ nav.show .menu {
   margin-top: 2rem;
   transition: 0.2s;
   cursor: pointer;
-  
 }
 
-#projetos #button .button.linked:hover{
+
+
+#projetos #button .button:hover{
   background: hsl(133, 60%, 59%);
 }
 
@@ -726,6 +719,12 @@ footer .madeBy ul {
   .icon-close {
     display: none;
   }
+
+  nav {
+    display: initial;
+  }
+
+
 
   nav{
     display: flex;
@@ -888,6 +887,7 @@ footer .madeBy ul {
 
   #lixoEletronico .gridContainer .text .order {
     padding-top: 5rem;
+    order: 2;
   }
 
   #lixoEletronico .gridContainer .trash img {
@@ -946,7 +946,7 @@ footer .madeBy ul {
     font: 400 calc(var(--subtitle-font-size) * 1.16) var(--body-font);
   }
 
-  /*TENTAR COLOCAR COM NTH CHILD OS CARDS*/
+  
 
   /*ESTILIZAR OQ PUDER*/
 
